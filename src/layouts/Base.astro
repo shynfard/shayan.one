@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand" href="/">shayan.one</a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+      </ul>
+    </nav>
+    <main><slot /></main>
+    <footer class="footer">
+      <slot name="footer" />
+      <p>© 2026 Shayan Davari Fard · Built with Astro, deployed on my own Kubernetes cluster.</p>
+    </footer>
+  </body>
+</html>
