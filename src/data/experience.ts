@@ -24,4 +24,9 @@ export const roles: Role[] = [
     summary: 'Founded and ran a tech startup end-to-end: full-stack development, cloud architecture, AI, infrastructure, product and project management, marketing and business development.',
     tags: ['Full-Stack', 'Cloud Architecture', 'AI', 'Product', 'Entrepreneurship'],
   },
+  {
+    start: '2014', end: '2019', title: 'Full-Stack Developer', org: 'Ariana GmbH',
+    summary: 'Built and maintained frontend and backend applications and internal company software. Owned database processing — structured data capture, data modeling, and performance optimization — plus server administration: patch management, firewall configuration, user and access management, backups, and IT security for reliable operations.',
+    tags: ['JavaScript/TypeScript', 'Full-Stack', 'SQL', 'Data Modeling', 'Server Administration', 'IT Security'],
+  },
 ];
