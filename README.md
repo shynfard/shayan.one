@@ -2,7 +2,7 @@
 
 Personal website of Shayan Davari Fard — Lead DevOps Engineer.
 
-- **Stack:** Astro 5 · TypeScript · Three.js · GSAP
+- **Stack:** Astro 7 · TypeScript · Three.js · GSAP
 - **Serving:** nginx:alpine container, built multi-stage
 - **CI:** GitHub Actions → `ghcr.io/shynfard/shayan-one`
 - **Runtime:** self-hosted Kubernetes (`k8s/`), TLS via cert-manager
