@@ -96,5 +96,8 @@ import { publications, awards, certifications, education } from '../data/publica
     } else {
       canvas?.remove(); // CSS gradient hero remains
     }
+    if (!reduced) {
+      import('../scripts/scroll').then((m) => m.initScroll());
+    }
   </script>
 </Base>
