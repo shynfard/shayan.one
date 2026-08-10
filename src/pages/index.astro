@@ -83,4 +83,18 @@ import { publications, awards, certifications, education } from '../data/publica
   <section id="contact" class="section container reveal">
     <Contact />
   </section>
+
+  <script>
+    const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasWebGL = (() => {
+      try { const c = document.createElement('canvas'); return !!(c.getContext('webgl2') || c.getContext('webgl')); }
+      catch { return false; }
+    })();
+    if (canvas && !reduced && hasWebGL) {
+      import('../scripts/hero').then((m) => m.initHero(canvas));
+    } else {
+      canvas?.remove(); // CSS gradient hero remains
+    }
+  </script>
 </Base>
