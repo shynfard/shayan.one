@@ -65,15 +65,21 @@ export function initHero(canvas: HTMLCanvasElement): void {
   addEventListener('resize', resize);
 
   const v = new THREE.Vector3();
+  const Y_AXIS = new THREE.Vector3(0, 1, 0);
+  const localMouse = new THREE.Vector3();
   let visible = true;
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(canvas);
 
   renderer.setAnimationLoop(() => {
     if (!visible) return;
+    // transform world-space mouse into scene-local space so repel stays
+    // aligned with the cursor as scene.rotation.y accumulates
+    localMouse.copy(mouse).applyAxisAngle(Y_AXIS, -scene.rotation.y);
+
     // drift + bounce + mouse repel
     for (let i = 0; i < COUNT; i++) {
       const j = i * 3;
-      v.set(pos[j] - mouse.x, pos[j + 1] - mouse.y, 0);
+      v.set(pos[j] - localMouse.x, pos[j + 1] - localMouse.y, 0);
       const d = v.length();
       if (d < MOUSE_R) {
         v.normalize().multiplyScalar((MOUSE_R - d) * 0.004);
@@ -93,7 +99,9 @@ export function initHero(canvas: HTMLCanvasElement): void {
       for (let b = a + 1; b < COUNT && e < MAX_EDGES; b++) {
         const dx = pos[a * 3] - pos[b * 3], dy = pos[a * 3 + 1] - pos[b * 3 + 1], dz = pos[a * 3 + 2] - pos[b * 3 + 2];
         if (dx * dx + dy * dy + dz * dz < LINK_DIST * LINK_DIST) {
-          edgePos.set([pos[a * 3], pos[a * 3 + 1], pos[a * 3 + 2], pos[b * 3], pos[b * 3 + 1], pos[b * 3 + 2]], e * 6);
+          const o = e * 6;
+          edgePos[o] = pos[a * 3]; edgePos[o + 1] = pos[a * 3 + 1]; edgePos[o + 2] = pos[a * 3 + 2];
+          edgePos[o + 3] = pos[b * 3]; edgePos[o + 4] = pos[b * 3 + 1]; edgePos[o + 5] = pos[b * 3 + 2];
           e++;
         }
       }
