@@ -27,6 +27,7 @@ body {
 
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+p a, li a { text-decoration: underline; text-underline-offset: 2px; }
 h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; }
 h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1.5rem; }
 
