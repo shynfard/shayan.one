@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+<Base title="Projects — Shayan Davari Fard" description="Open-source projects: LogicSpec, NetNN (IEEE ISCC 2024), ONE Record, BitVote, and more.">
+  <section class="section container" style="padding-top: 8rem;">
+    <h2>Projects</h2>
+    <p class="dim" style="max-width: 42rem; margin-bottom: 2rem;">
+      Open source, research prototypes, and hackathon wins. More on
+      <a href="https://github.com/shynfard">GitHub</a>.
+    </p>
+    <div class="project-grid">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </section>
+</Base>

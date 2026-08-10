@@ -1,0 +1,17 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project; }
+const { project } = Astro.props;
+---
+<article class:list={['card', 'project-card', { featured: project.featured }]}>
+  <h3><a href={project.repo}>{project.name}</a></h3>
+  {project.award && <span class="award">🏆 {project.award}</span>}
+  <p class="dim" style="margin-top: 0.6rem;">{project.description}</p>
+  <div class="tags" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.75rem;">
+    {project.tags.map((t) => <span class="tag">{t}</span>)}
+  </div>
+  <div class="links">
+    <a href={project.repo}>Code →</a>
+    {project.paper && <a href={project.paper}>Paper →</a>}
+  </div>
+</article>
