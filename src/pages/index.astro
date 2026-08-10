@@ -1,6 +1,86 @@
 ---
 import Base from '../layouts/Base.astro';
+import Timeline from '../components/Timeline.astro';
+import StackGrid from '../components/StackGrid.astro';
+import Contact from '../components/Contact.astro';
+import { site } from '../data/site';
+import { publications, awards, certifications, education } from '../data/publications';
 ---
-<Base title="Shayan Davari Fard — Lead DevOps Engineer" description="Lead DevOps Engineer · Cloud & Security Architect. Secure multi-cloud Kubernetes platforms, AI/ML infrastructure, security-by-design.">
-  <section class="section container"><h1>Placeholder</h1></section>
+<Base title={`${site.name} — Lead DevOps Engineer`} description={site.tagline}>
+  <section id="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay">
+      <h1>{site.name}</h1>
+      <p class="role">{site.role}</p>
+      <p class="tagline">{site.tagline}</p>
+    </div>
+    <span class="scroll-hint" aria-hidden="true">↓</span>
+  </section>
+
+  <section id="about" class="section container reveal">
+    <h2>About</h2>
+    <p style="max-width: 46rem;">
+      DevOps engineer with an academic background in IT security and years of hands-on work across
+      AI architecture, cloud infrastructure, networking and cybersecurity. I design, build and operate
+      secure multi-cloud and on-premises platforms from the ground up — platforms that let teams of up
+      to thirty professionals develop, train and deploy AI models securely. My core strengths:
+      scalable architecture, infrastructure automation, network design, platform engineering and
+      security-by-design.
+    </p>
+  </section>
+
+  <section id="experience" class="section container reveal">
+    <h2>Experience</h2>
+    <Timeline />
+  </section>
+
+  <section id="credentials" class="section container reveal">
+    <h2>Education, research & awards</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Education</h3>
+        <ul class="dim" style="padding-left: 1.1rem; margin-top: 0.75rem;">
+          {education.map((e) => <li><span class="mono">{e.years}</span> — {e.degree}, {e.school}</li>)}
+        </ul>
+        <h3 style="margin-top: 1.5rem;">Certifications</h3>
+        <ul class="dim" style="padding-left: 1.1rem; margin-top: 0.75rem;">
+          {certifications.map((c) => <li>{c}</li>)}
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Publications</h3>
+        <ul class="dim" style="padding-left: 1.1rem; margin-top: 0.75rem;">
+          {publications.map((p) => (
+            <li style="margin-bottom: 0.6rem;">
+              {p.link ? <a href={p.link}>{p.title}</a> : p.title} ({p.year})
+              {p.award && <span class="tag" style="margin-left: 0.4rem; color: var(--accent);">{p.award}</span>}
+            </li>
+          ))}
+        </ul>
+        <h3 style="margin-top: 1.5rem;">Awards</h3>
+        <ul class="dim" style="padding-left: 1.1rem; margin-top: 0.75rem;">
+          {awards.map((a) => <li>{a}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus" class="section container reveal">
+    <h2>Right now</h2>
+    <p style="max-width: 46rem;">
+      Leading DevOps on a secure, C5-compliant multi-cloud Kubernetes platform for AI model development
+      and hosting. On the side I'm building
+      <a href="https://github.com/shynfard/LogicSpec">LogicSpec</a> — an open-source, AI-native
+      Application Definition Language: define the logic, generate the software.
+    </p>
+  </section>
+
+  <section id="stack" class="section container reveal">
+    <h2>Tech stack</h2>
+    <StackGrid />
+  </section>
+
+  <section id="contact" class="section container reveal">
+    <Contact />
+  </section>
 </Base>

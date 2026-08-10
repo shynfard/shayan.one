@@ -1,0 +1,13 @@
+---
+import { stackGroups } from '../data/stack';
+---
+<div class="stack-grid">
+  {stackGroups.map((g) => (
+    <div class="card">
+      <h3 class="mono" style="color: var(--accent); font-size: 0.95rem;">{g.label}</h3>
+      <div class="tags" style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.75rem;">
+        {g.items.map((i) => <span class="tag">{i}</span>)}
+      </div>
+    </div>
+  ))}
+</div>

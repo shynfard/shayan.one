@@ -1,0 +1,13 @@
+---
+import { site } from '../data/site';
+---
+<div style="text-align:center;">
+  <h2>Get in touch</h2>
+  <p class="dim">Based in {site.location}. Open to interesting infrastructure, security and AI platform problems.</p>
+  <div class="contact-links">
+    <a href={`mailto:${site.email}`}>{site.email}</a>
+    <a href={site.github}>GitHub</a>
+    <a href={site.twitter}>Twitter</a>
+    <a href={site.telegram}>Telegram</a>
+  </div>
+</div>
