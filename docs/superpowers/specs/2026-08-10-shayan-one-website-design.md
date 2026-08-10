@@ -71,25 +71,36 @@ Dark theme throughout. Sections in scroll order:
 ### 2. About
 Short intro: DevOps engineer with IT security, cloud architecture, and software engineering background. Based in Germany. Focus: secure, scalable, compliant infrastructure — IaC, GitOps, Kubernetes.
 
-### 3. Experience timeline (animated on scroll)
-Four stations, revealed by GSAP ScrollTrigger:
-1. **Database processing** — structured data capture, integrity, optimization (SQL, data modeling).
-2. **Full-stack development** — frontend/backend apps, internal company software (JS/TS, APIs).
-3. **Server administration** — servers, computer pools, firewalls, user management, IT security.
-4. **DevOps & Cloud (current)** — Lead DevOps Engineer: secure multi-cloud Kubernetes platforms, AI/ML workloads, Security-by-Design, compliance (C5).
+### 3. Experience timeline (animated on scroll, from CV)
+Revealed by GSAP ScrollTrigger, newest first:
+1. **01.2025 – today · Lead DevOps** (employer name omitted on site; editable in data file) — architecture of a secure, C5-compliant multi-cloud platform with multiple Kubernetes clusters for AI projects, model development, and model hosting. Full IaC (Terraform), GitOps (GitLab CI/CD, ArgoCD), zero-trust networking, Azure AD/RBAC, central secrets management, logging/monitoring for compliance.
+2. **01.2023 – 12.2024 · DevOps Engineer, Cegeka** — secure cloud-native architectures for public/private clients (incl. BA, Infineon); GitOps framework for 17+ teams; HA GitLab enterprise on OpenShift; Kubernetes, Istio, observability; secure point-of-sale system.
+3. **11.2019 – 12.2022 · Project Manager, Fraunhofer IML** — 3D camera tech for object recognition/tracking in logistics; predictive analytics from sound/vibration sensors; IATA ONE Record NE:ONE program; ML models for airport demand prediction.
+4. **12.2018 – 12.2022 · Co-Founder & CEO, Flame (startup)** — end-to-end product: full-stack, cloud, AI, infrastructure, product, business.
 
-### 4. Current focus
+### 4. Education, publications & awards (new section, from CV)
+- **Education:** M.Sc. IT Security, TU Darmstadt (2021–2025) · B.Sc. Computer Engineering, TU Darmstadt (2017–2021).
+- **Publications:**
+  - *NetNN: Neural Intrusion Detection System in Programmable Networks* — IEEE ISCC 2024, **2nd Best Paper Award** ([ieeexplore.ieee.org/document/10733725](https://ieeexplore.ieee.org/document/10733725/)).
+  - *Guaranteeing democracy: unlinkability and anonymity in e-voting* (2024) — blockchain + homomorphic encryption + zk-SNARKs.
+  - *Smart Contract Data feed with Secure Multi-Party Computation* (2020).
+- **Awards:** 2nd Best Paper IEEE ISCC 2024 · 1st place ONE Record Hackathon 2022 · 1st place ONE Record Hackathon 2021 · 2nd place Continental Hackathon 2019.
+- **Certifications:** CKA – Certified Kubernetes Administrator (2025–2027) · LFS253 Containers Fundamentals (2024).
+
+### 5. Current focus
 - Secure multi-cloud platforms for Kubernetes, AI/ML workloads, enterprise apps.
 - Building **LogicSpec** — open-source AI-native Application Definition Language ("Define the logic. Generate the software.").
 
-### 5. Tech stack
-Grid of grouped badges:
-- Languages: Python, Java, JavaScript, TypeScript, Go, SQL, Bash
-- Cloud: Azure, AWS, GCP, Kubernetes, OpenShift
-- DevOps & Security: Terraform, Helm, GitOps, ArgoCD, GitLab CI/CD, RBAC, Secrets Management, Container Security, C5 Compliance
+### 6. Tech stack
+Grid of grouped badges (condensed from CV "Key areas"):
+- Languages: Python, Java, JS/TS, C/C++, Go, SQL/NoSQL, Bash, P4
+- Cloud & Platforms: Azure, AWS, GCP, Kubernetes, OpenShift, AKS
+- DevOps: Terraform, Ansible, Helm, GitOps, ArgoCD, GitLab CI/CD, Observability (Prometheus, OpenTelemetry, ELK)
+- Security: Zero Trust, RBAC/ABAC, Secrets Management, Container Scanning (Trivy, Snyk), Pen Testing, C5 Compliance
+- AI/ML: PyTorch, TensorFlow, LLM/RAG, Kubeflow, MLflow
 
-### 6. Contact (footer)
-Email (shayandavarifard@yahoo.com), GitHub (shynfard), Twitter (@shyndavfard), Telegram (@shyndavfard). Location: Germany.
+### 7. Contact (footer)
+Email (shayandavarifard@yahoo.com), GitHub (shynfard), Twitter (@shyndavfard), Telegram (@shyndavfard). Location: Germany. Phone deliberately NOT published.
 
 ## Projects page
 
@@ -98,10 +109,10 @@ Card grid from `src/data/projects.ts`. Each card: name, one-paragraph descriptio
 | Project | Description | Tech |
 |---|---|---|
 | **LogicSpec** (headline) | Open-source AI-native Application Definition Language — describe software behavior independent of language/framework | TypeScript, MIT |
-| **netnn** | Neural network experiments in P4 — in-network computing | P4 |
-| **ONE Record hackathon** | IATA ONE Record dashboard + player built at aviation hackathon | TypeScript |
+| **NetNN** | DNN-based intrusion detection running entirely in the data plane of programmable switches — IEEE ISCC 2024, 2nd Best Paper Award. 99% detection accuracy at line rate | P4, IEEE paper link |
+| **ONE Record** | IATA ONE Record dashboard + player — 1st place, ONE Record Hackathon 2021 & 2022 | TypeScript |
+| **BitVote** | Decentralized e-voting: blockchain + homomorphic encryption + zk-SNARKs (basis of 2024 publication) | Go |
 | **postgres-backup-s3-minio** | PostgreSQL Docker companion for periodic backups to S3/MinIO | Shell, Docker |
-| **BitVote** | Full-node BitVote implementation | Go |
 
 Headline card (LogicSpec) larger/featured. Data-driven: adding a project = one entry in `projects.ts`.
 
